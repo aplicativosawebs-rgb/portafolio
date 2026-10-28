@@ -1,0 +1,820 @@
+<!-- Precios.html -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Precios y Servicios - Ilder Gutiérrez</title>
+  <meta content="Consulta nuestros precios y servicios de desarrollo web. Soluciones personalizadas para tu negocio en Colombia." name="description">
+  <meta content="precios, servicios, desarrollo web, diseño web, Colombia" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .pricing-card {
+      border: 2px solid #f8f9fa;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .pricing-card:hover {
+      border-color: #0ea5e9;
+      box-shadow: 0 10px 30px rgba(14, 165, 233, 0.2);
+      transform: translateY(-5px);
+    }
+
+    .pricing-card.featured {
+      border-color: #0ea5e9;
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(14, 165, 233, 0.02) 100%);
+    }
+
+    .pricing-card .price {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #0ea5e9;
+      margin: 20px 0;
+    }
+
+    .pricing-card .price-period {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .pricing-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .pricing-card .description {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 25px;
+      min-height: 50px;
+    }
+
+    .pricing-features {
+      text-align: left;
+      margin: 30px 0;
+    }
+
+    .pricing-features li {
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f0f0;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .pricing-features li:last-child {
+      border-bottom: none;
+    }
+
+    .pricing-features li i {
+      color: #0ea5e9;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    .pricing-cta {
+      margin-top: 30px;
+    }
+
+    .pricing-cta .btn {
+      width: 100%;
+      padding: 12px 20px;
+      font-weight: 600;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .pricing-cta .btn-primary {
+      background-color: #0ea5e9;
+      border-color: #0ea5e9;
+    }
+
+    .pricing-cta .btn-primary:hover {
+      background-color: #0284c7;
+      border-color: #0284c7;
+    }
+
+    .pricing-cta .btn-outline-primary {
+      color: #0ea5e9;
+      border-color: #0ea5e9;
+    }
+
+    .pricing-cta .btn-outline-primary:hover {
+      background-color: #0ea5e9;
+      border-color: #0ea5e9;
+      color: white;
+    }
+
+    .table-pricing {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      margin-top: 40px;
+    }
+
+    .table-pricing table {
+      margin-bottom: 0;
+    }
+
+    .table-pricing th {
+      background-color: #f8f9fa;
+      color: #333;
+      font-weight: 600;
+      border: none;
+      padding: 20px;
+    }
+
+    .table-pricing td {
+      padding: 20px;
+      border-color: #f0f0f0;
+    }
+
+    .table-pricing tr:hover {
+      background-color: #f8f9fa;
+    }
+
+    .note-section {
+      background-color: #f0f9ff;
+      border-left: 4px solid #0ea5e9;
+      padding: 20px;
+      margin-top: 40px;
+      border-radius: 5px;
+    }
+
+    .note-section h4 {
+      color: #0284c7;
+      margin-bottom: 15px;
+    }
+
+    .note-section p {
+      color: #555;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .note-section ul {
+      margin-left: 20px;
+    }
+
+    .note-section li {
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+      color: white;
+      padding: 60px 20px;
+      border-radius: 10px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .cta-section h2 {
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .cta-section p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: #e0f2fe;
+    }
+
+    .cta-section .btn {
+      background-color: white;
+      color: #0ea5e9;
+      font-weight: 600;
+      padding: 12px 30px;
+    }
+
+    .cta-section .btn:hover {
+      background-color: #f0f9ff;
+    }
+
+    .badge-popular {
+      background-color: #0ea5e9;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 15px;
+      display: inline-block;
+    }
+
+    .service-lang-card {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border-left: 4px solid #0ea5e9;
+    }
+
+    .service-lang-card h5 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .service-lang-card p {
+      color: #555;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+
+    .service-lang-card .price-alt {
+      font-size: 1.8rem;
+      color: #0ea5e9;
+      font-weight: 700;
+      margin: 10px 0;
+    }
+
+    .badge-languages {
+      display: inline-block;
+      background-color: #e3f2fd;
+      color: #0284c7;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      margin: 2px;
+      font-weight: 600;
+    }
+  </style>
+
+</head>
+
+<body class="pricing-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="assets/img/perfil_p.jpeg" alt="Ilder Gutiérrez" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Ilder Gutiérrez</h1>
+    </a>
+
+    <div class="social-links text-center">
+      <a href="https://www.facebook.com/iilldeer/" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com/Allberto_Gutierrez96" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/ilder-alberto-gutierrez-beleño-a4324a159/" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html#hero"><i class="bi bi-house navicon"></i>Inicio</a></li>
+        <li><a href="index.html#about"><i class="bi bi-person navicon"></i> Sobre Mi</a></li>
+        <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resumen</a></li>
+        <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="index.html#services"><i class="bi bi-hdd-stack navicon"></i> Servicios</a></li>
+        <li><a href="precios.html" class="active"><i class="bi bi-tag navicon"></i> Precios</a></li>
+      </ul>
+    </nav>
+
+    <div style="display: flex; justify-content: center; align-items: center">
+      <img src="assets/img/favicon.png" style="width: 50px" alt="Logo">
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Precios y Servicios</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Inicio</a></li>
+            <li class="current">Precios</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section light-background">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title text-center mb-5">
+          <h2>Nuestros Precios</h2>
+          <p>Soluciones de desarrollo web adaptadas a tu presupuesto y necesidades. Precios competitivos para negocios en Colombia.</p>
+        </div>
+
+        <!-- Pricing Cards -->
+        <div class="row g-4 mb-5">
+
+          <!-- Card 1: Sitio Estático -->
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="pricing-card">
+              <h3><i class="bi bi-globe"></i> Sitio Estático</h3>
+              <p class="description">Página web moderna y responsiva (5-10 páginas)</p>
+              <div class="price">$330.000</div>
+              <p class="price-period">Proyecto completo</p>
+              
+              <ul class="pricing-features list-unstyled">
+                <li><i class="bi bi-check-circle-fill"></i> Diseño responsivo</li>
+                <li><i class="bi bi-check-circle-fill"></i> HTML5 + CSS3 + JavaScript</li>
+                <li><i class="bi bi-check-circle-fill"></i> 5-10 páginas</li>
+                <li><i class="bi bi-check-circle-fill"></i> Optimización SEO básica</li>
+                <li><i class="bi bi-check-circle-fill"></i> Compatible con navegadores</li>
+                <li><i class="bi bi-check-circle-fill"></i> 2 revisiones incluidas</li>
+              </ul>
+
+              <div class="pricing-cta">
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#contactModal" data-service="Sitio Estático">
+                  <i class="bi bi-whatsapp"></i> Solicitar Presupuesto
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Landing Page (Featured) -->
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="pricing-card featured">
+              <div class="badge-popular">Más Popular</div>
+              <h3><i class="bi bi-window-fullscreen"></i> Landing Page</h3>
+              <p class="description">Página de aterrizaje optimizada para conversiones</p>
+              <div class="price">$275.000</div>
+              <p class="price-period">Proyecto completo</p>
+              
+              <ul class="pricing-features list-unstyled">
+                <li><i class="bi bi-check-circle-fill"></i> Diseño atractivo y moderno</li>
+                <li><i class="bi bi-check-circle-fill"></i> 1 página optimizada</li>
+                <li><i class="bi bi-check-circle-fill"></i> Formularios funcionales</li>
+                <li><i class="bi bi-check-circle-fill"></i> Integración de redes sociales</li>
+                <li><i class="bi bi-check-circle-fill"></i> Animaciones y efectos</li>
+                <li><i class="bi bi-check-circle-fill"></i> 3 revisiones incluidas</li>
+              </ul>
+
+              <div class="pricing-cta">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal" data-service="Landing Page">
+                  <i class="bi bi-whatsapp"></i> Solicitar Presupuesto
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Tienda Online Básica -->
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="pricing-card">
+              <h3><i class="bi bi-shop"></i> E-commerce Básico</h3>
+              <p class="description">Tienda online con carrito de compras</p>
+              <div class="price">$880.000</div>
+              <p class="price-period">Proyecto completo</p>
+              
+              <ul class="pricing-features list-unstyled">
+                <li><i class="bi bi-check-circle-fill"></i> Catálogo de productos</li>
+                <li><i class="bi bi-check-circle-fill"></i> Carrito de compras</li>
+                <li><i class="bi bi-check-circle-fill"></i> Sistema de pagos básico</li>
+                <li><i class="bi bi-check-circle-fill"></i> Gestión de órdenes</li>
+                <li><i class="bi bi-check-circle-fill"></i> Cuenta de usuario</li>
+                <li><i class="bi bi-check-circle-fill"></i> 4 revisiones incluidas</li>
+              </ul>
+
+              <div class="pricing-cta">
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#contactModal" data-service="E-commerce Básico">
+                  <i class="bi bi-whatsapp"></i> Solicitar Presupuesto
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Second Row -->
+        <div class="row g-4 mb-5">
+
+          <!-- Card 4: Sistema Web -->
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="pricing-card">
+              <h3><i class="bi bi-diagram-3"></i> Sistema Web Simple</h3>
+              <p class="description">Aplicación web con base de datos</p>
+              <div class="price">$1.320.000</div>
+              <p class="price-period">Proyecto completo</p>
+              
+              <ul class="pricing-features list-unstyled">
+                <li><i class="bi bi-check-circle-fill"></i> Base de datos MySQL</li>
+                <li><i class="bi bi-check-circle-fill"></i> Backend en PHP</li>
+                <li><i class="bi bi-check-circle-fill"></i> Panel de administración</li>
+                <li><i class="bi bi-check-circle-fill"></i> Autenticación de usuarios</li>
+                <li><i class="bi bi-check-circle-fill"></i> CRUD completo</li>
+                <li><i class="bi bi-check-circle-fill"></i> 5 revisiones incluidas</li>
+              </ul>
+
+              <div class="pricing-cta">
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#contactModal" data-service="Sistema Web Simple">
+                  <i class="bi bi-whatsapp"></i> Solicitar Presupuesto
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Sitio Corporativo -->
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="pricing-card">
+              <h3><i class="bi bi-building"></i> Sitio Corporativo</h3>
+              <p class="description">Página profesional para empresas</p>
+              <div class="price">$550.000</div>
+              <p class="price-period">Proyecto completo</p>
+              
+              <ul class="pricing-features list-unstyled">
+                <li><i class="bi bi-check-circle-fill"></i> Diseño profesional</li>
+                <li><i class="bi bi-check-circle-fill"></i> 10-15 páginas</li>
+                <li><i class="bi bi-check-circle-fill"></i> Sistema de blog</li>
+                <li><i class="bi bi-check-circle-fill"></i> Formulario de contacto</li>
+                <li><i class="bi bi-check-circle-fill"></i> Integración de Google Maps</li>
+                <li><i class="bi bi-check-circle-fill"></i> 3 revisiones incluidas</li>
+              </ul>
+
+              <div class="pricing-cta">
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#contactModal" data-service="Sitio Corporativo">
+                  <i class="bi bi-whatsapp"></i> Solicitar Presupuesto
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Mantenimiento Mensual -->
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="pricing-card">
+              <h3><i class="bi bi-tools"></i> Soporte Mensual</h3>
+              <p class="description">Mantenimiento y soporte continuo</p>
+              <div class="price">$330.000</div>
+              <p class="price-period">Mensual</p>
+              
+              <ul class="pricing-features list-unstyled">
+                <li><i class="bi bi-check-circle-fill"></i> Corrección de errores</li>
+                <li><i class="bi bi-check-circle-fill"></i> Actualizaciones menores</li>
+                <li><i class="bi bi-check-circle-fill"></i> Backups regulares</li>
+                <li><i class="bi bi-check-circle-fill"></i> Soporte por email</li>
+                <li><i class="bi bi-check-circle-fill"></i> Monitoreo del sitio</li>
+                <li><i class="bi bi-check-circle-fill"></i> Mejoras de rendimiento</li>
+              </ul>
+
+              <div class="pricing-cta">
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#contactModal" data-service="Soporte Mensual">
+                  <i class="bi bi-whatsapp"></i> Solicitar Presupuesto
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section class="services-languages container">
+      <div class="section-title text-center mb-5" data-aos="fade-up">
+        <h2>Servicios Adicionales por Lenguaje</h2>
+        <p>Proyectos especializados en Python, Java y C#</p>
+      </div>
+
+      <div class="row g-4">
+        
+        <!-- Python -->
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-lang-card">
+            <h5><i class="bi bi-code-slash"></i> Python</h5>
+            <div class="badge-languages">Scripts • Automatización • Web (Django)</div>
+            
+            <p style="margin-top: 15px;"><strong>Scripting & Automatización:</strong></p>
+            <p>Scripts personalizados para automatizar tareas</p>
+            <div class="price-alt">$220.000+</div>
+
+            <p style="margin-top: 15px;"><strong>Análisis de Datos:</strong></p>
+            <p>Procesamiento y análisis con Python (Pandas, NumPy)</p>
+            <div class="price-alt">$440.000+</div>
+
+            <p style="margin-top: 15px;"><strong>Web (Django/Flask):</strong></p>
+            <p>Aplicación web con framework Django o Flask</p>
+            <div class="price-alt">$1.100.000+</div>
+
+            <button type="button" class="btn btn-outline-primary w-100 mt-3" data-bs-toggle="modal" data-bs-target="#contactModal" data-service="Proyecto Python Personalizado">
+              <i class="bi bi-whatsapp"></i> Consultar
+            </button>
+          </div>
+        </div>
+
+        <!-- Java -->
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-lang-card">
+            <h5><i class="bi bi-code-slash"></i> Java</h5>
+            <div class="badge-languages">Aplicaciones • Sistemas • Escaso</div>
+            
+            <p style="margin-top: 15px;"><strong>Aplicación Desktop:</strong></p>
+            <p>Aplicación de escritorio con interfaz gráfica</p>
+            <div class="price-alt">$660.000+</div>
+
+            <p style="margin-top: 15px;"><strong>API REST (Spring Boot):</strong></p>
+            <p>Backend robusto con Spring Framework</p>
+            <div class="price-alt">$1.650.000+</div>
+
+            <p style="margin-top: 15px;"><strong>Sistema Empresarial:</strong></p>
+            <p>Aplicación compleja con BD y módulos</p>
+            <div class="price-alt">$2.200.000+</div>
+
+            <button type="button" class="btn btn-outline-primary w-100 mt-3" data-bs-toggle="modal" data-bs-target="#contactModal" data-service="Proyecto Java Personalizado">
+              <i class="bi bi-whatsapp"></i> Consultar
+            </button>
+          </div>
+        </div>
+
+        <!-- C# -->
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-lang-card">
+            <h5><i class="bi bi-code-slash"></i> C#</h5>
+            <div class="badge-languages">Windows • .NET • Aplicaciones</div>
+            
+            <p style="margin-top: 15px;"><strong>Aplicación Windows:</strong></p>
+            <p>Software para Windows con Windows Forms o WPF</p>
+            <div class="price-alt">$770.000+</div>
+
+            <p style="margin-top: 15px;"><strong>API .NET Core:</strong></p>
+            <p>Backend con ASP.NET Core y SQL Server</p>
+            <div class="price-alt">$1.430.000+</div>
+
+            <p style="margin-top: 15px;"><strong>App Completa (Web + Desktop):</strong></p>
+            <p>Solución integrada web y escritorio</p>
+            <div class="price-alt">$1.980.000+</div>
+
+            <button type="button" class="btn btn-outline-primary w-100 mt-3" data-bs-toggle="modal" data-bs-target="#contactModal" data-service="Proyecto C# Personalizado">
+              <i class="bi bi-whatsapp"></i> Consultar
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Detailed Pricing Table -->
+    <section class="pricing-table-section light-background">
+      <div class="container" data-aos="fade-up">
+        
+        <div class="section-title text-center mb-4">
+          <h2>Comparativa de Servicios</h2>
+          <p>Detalle completo de lo que incluye cada servicio</p>
+        </div>
+
+        <div class="table-pricing">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Característica</th>
+                <th class="text-center">Landing Page</th>
+                <th class="text-center">Sitio Estático</th>
+                <th class="text-center">E-commerce</th>
+                <th class="text-center">Sistema Web</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Número de páginas</strong></td>
+                <td class="text-center">1</td>
+                <td class="text-center">5-10</td>
+                <td class="text-center">Ilimitadas</td>
+                <td class="text-center">Ilimitadas</td>
+              </tr>
+              <tr>
+                <td><strong>Base de datos</strong></td>
+                <td class="text-center"><i class="bi bi-x-circle"></i></td>
+                <td class="text-center"><i class="bi bi-x-circle"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle text-success"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle text-success"></i></td>
+              </tr>
+              <tr>
+                <td><strong>Diseño responsivo</strong></td>
+                <td class="text-center"><i class="bi bi-check-circle text-success"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle text-success"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle text-success"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle text-success"></i></td>
+              </tr>
+              <tr>
+                <td><strong>Panel de administración</strong></td>
+                <td class="text-center"><i class="bi bi-x-circle"></i></td>
+                <td class="text-center"><i class="bi bi-x-circle"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle text-success"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle text-success"></i></td>
+              </tr>
+              <tr>
+                <td><strong>Sistema de pagos</strong></td>
+                <td class="text-center"><i class="bi bi-x-circle"></i></td>
+                <td class="text-center"><i class="bi bi-x-circle"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle text-success"></i></td>
+                <td class="text-center">Opcional</td>
+              </tr>
+              <tr>
+                <td><strong>SEO optimizado</strong></td>
+                <td class="text-center"><i class="bi bi-check-circle text-success"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle text-success"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle text-success"></i></td>
+                <td class="text-center"><i class="bi bi-check-circle text-success"></i></td>
+              </tr>
+              <tr>
+                <td><strong>Tiempo de entrega</strong></td>
+                <td class="text-center">7-10 días</td>
+                <td class="text-center">14-21 días</td>
+                <td class="text-center">30-45 días</td>
+                <td class="text-center">30-60 días</td>
+              </tr>
+              <tr>
+                <td><strong>Revisiones incluidas</strong></td>
+                <td class="text-center">3</td>
+                <td class="text-center">2</td>
+                <td class="text-center">4</td>
+                <td class="text-center">5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Notes Section -->
+    <section class="notes-section">
+      <div class="container" data-aos="fade-up">
+        
+        <div class="note-section">
+          <h4><i class="bi bi-info-circle"></i> Información Importante</h4>
+          <p><strong>Precios en COP (Pesos Colombianos)</strong> - Válidos para negocios en Colombia</p>
+          <ul>
+            <li><strong>Tiempo de entrega:</strong> Los tiempos estimados pueden variar según la complejidad y cambios solicitados.</li>
+            <li><strong>Hosting y dominio:</strong> No incluidos en los precios base. Se pueden contratar adicionales desde $40.000/año.</li>
+            <li><strong>Revisiones adicionales:</strong> Después de las incluidas, cada revisión cuesta $50.000.</li>
+            <li><strong>Cambios después del lanzamiento:</strong> Se cobran según la complejidad (desde $50.000).</li>
+            <li><strong>Formas de pago:</strong> Transferencia bancaria, Nequi, Daviplata o efectivo al realizar el proyecto.</li>
+            <li><strong>Disponibilidad:</strong> Trabajo remoto, con reuniones vía Zoom o llamadas telefónicas.</li>
+          </ul>
+        </div>
+
+        <div class="note-section mt-4">
+          <h4><i class="bi bi-lightbulb"></i> Servicios Adicionales</h4>
+          <ul>
+            <li><strong>Integración de pasarelas de pago:</strong> $200.000 - $400.000</li>
+            <li><strong>Integración con WhatsApp Business:</strong> $150.000</li>
+            <li><strong>Sistema de reservas/citas:</strong> $300.000</li>
+            <li><strong>App móvil simple (Android/iOS):</strong> Consultar presupuesto específico</li>
+            <li><strong>Migración de sitio existente:</strong> $200.000 en adelante</li>
+            <li><strong>Consultoría en desarrollo web:</strong> $100.000 por hora</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section container rounded">
+      <h2>¿No encuentras lo que buscas?</h2>
+      <p>Contacta conmigo para un presupuesto personalizado según tus necesidades específicas</p>
+      <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#contactModal" data-service="Presupuesto Personalizado">
+        <i class="bi bi-whatsapp"></i> Solicitar Presupuesto Personalizado
+      </button>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div style="display: flex; justify-content: center; align-items: center">
+        <img src="assets/img/barra.png" style="width: 30%" alt="Logo">
+      </div>
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Ilder Gutiérrez</strong> <span>Todos los derechos son reservados</span></p>
+      </div>
+      <div class="credits">
+        Plantilla tomada de: <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal de Contacto -->
+  <div class="modal fade" id="contactModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="bi bi-whatsapp"></i> Solicitud de Presupuesto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="contactForm">
+            <input type="hidden" id="serviceField" name="service">
+            
+            <div class="mb-3">
+              <label for="name" class="form-label">Nombre completo</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="phone" class="form-label">Teléfono (WhatsApp)</label>
+              <input type="tel" class="form-control" id="phone" name="phone" placeholder="Ej: 3001234567" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="service" class="form-label">Servicio de Interés</label>
+              <input type="text" class="form-control" id="service" name="service" disabled>
+            </div>
+
+            <div class="mb-3">
+              <label for="message" class="form-label">Cuéntame sobre tu proyecto</label>
+              <textarea class="form-control" id="message" name="message" rows="4" placeholder="Describe brevemente qué necesitas..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100"><i class="bi bi-whatsapp"></i> Enviar por WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // Set service field when opening modal
+    const contactModal = document.getElementById('contactModal');
+    contactModal.addEventListener('show.bs.modal', function (event) {
+      const button = event.relatedTarget;
+      const service = button.getAttribute('data-service');
+      document.getElementById('serviceField').value = service;
+      document.getElementById('service').value = service;
+    });
+
+    // Handle form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const service = document.getElementById('serviceField').value;
+      const message = document.getElementById('message').value;
+
+      // Format message for WhatsApp
+      const whatsappMessage = `Hola Ilder, me interesa conocer más sobre: ${service}%0A%0ANombre: ${name}%0AEmail: ${email}%0ATeléfono: ${phone}%0A%0AMensaje: ${message}`;
+      
+      // You can also send via email using a service like EmailJS
+      // For now, we'll open WhatsApp
+      window.open(`https://wa.me/573145891108?text=${whatsappMessage}`, '_blank');
+      
+      // Reset form
+      this.reset();
+      const modal = bootstrap.Modal.getInstance(contactModal);
+      modal.hide();
+
+      alert('Por favor, completa tu mensaje en WhatsApp.');
+    });
+  </script>
+
+</body>
+
+</html>
